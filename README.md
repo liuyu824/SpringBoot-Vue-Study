@@ -22,7 +22,7 @@ SpringBoot是Spring提供的一个子项目，用于快速构建Spring应用程�
 - Spring Security 认证授权
 - Spring Cloud 服务治理
 
-##### 传统的方式构建Spring应用程序
+传统的方式构建Spring应用程序
 
 - 导入依赖繁琐
 - 项目配置繁琐
@@ -49,3 +49,344 @@ spring-boot-starter-web
 - 导入 spring-boot-starter-web依赖
 - 编写Controller
 - 提供启动类
+
+### 学习计划
+
+- 基础篇
+
+  - 配置文件
+
+  - 整合MyBatis
+
+  - Bean管理
+
+  - 自动配置管理
+
+  - 自定义Starter
+
+- 实战篇
+  - 项目开发
+  - 整合三方技术
+  - 项目部署
+- 面试篇
+  - 面试题
+  - 源码
+
+### 基础篇-04_springboot配置文件
+
+- properties 配置文件
+
+  - application.properties
+
+  - ```java
+    server.port=9090
+    server.servlet.context.path=/start
+    ```
+
+- yaml / yml 配置文件
+
+  - application.yml / application.yaml
+
+  - ```java
+    server:
+    	port:9191
+        servlet:
+    		context-path:/start2
+    ```
+
+  
+
+  
+
+  
+
+### 基础篇-05_yml配置信息书写和获取
+
+- 
+
+  - 三方技术配置信息
+
+  - 自定义配置信息
+
+  - ```java
+    // application.yml配置
+    email:
+      user:1004462123@qq.com
+      code:
+      host:smtp.qq.com
+      auth:true
+    ```
+
+  - ```java
+    // 在代码中使用时，可使用@Value注解
+    @Value("${email.user}")
+    @Value("${email.code}")
+    @Value("${email.host}")
+    @Value("${email.auth}")
+    
+    // 当注解比较多时，会存在每一条都写得冗余代码
+    @ConfigurationProperties(prefix="前缀")
+    ```
+
+### 基础篇-06_Springboot整合mybatis
+
+```java
+// pom.xml文件
+// 添加数据库启动依赖
+<dependency>
+    <groupId>org.mybatis.spring.boot</groupId>
+    <artifactId>mybatis-spring-boot-starter</artifactId>
+    <version>3.0.0</version>
+</dependency>   
+
+// 添加mysql依赖    
+```
+
+项目增加文件：
+
+- SqlSessionFactoryBean
+- MapperScannerConfigurer
+- Datasource
+
+UserController -> UserService -> UserMapper -> 操作数据库
+
+
+
+### 基础篇-07_ Bean扫描
+
+
+
+### 基础篇-08_ Bean注册
+
+
+
+### 基础篇-09_ 注册条件
+
+
+
+### 基础篇-10_ 自动配置原理
+
+
+
+### 基础篇-11_ 自定义Starter
+
+
+
+### 实战篇-01_ 实战概述
+
+
+
+### 实战篇-02_ 开发模式和环境搭建
+
+
+
+实战篇-03_ 注册接口
+
+
+
+实战篇-04_ 注册接口参数校验
+
+
+
+实战篇-05_ 登录主逻辑
+
+
+
+实战篇-06_ 登录认证引入
+
+
+
+实战篇-07_  JWT令牌
+
+
+
+实战篇-08_ 登录认证_完成
+
+
+
+实战篇-09_ 获取用户详细信息
+
+
+
+实战篇-10_ 获取用户详细信息_ThreadLocal优化
+
+
+
+实战篇-11_ 更新用户基本信息
+
+
+
+实战篇-12_ 更新用户基本信息_参数校验
+
+
+
+实战篇-13_ 更新用户头像
+
+
+
+实战篇-14_ 更新用户密码
+
+
+
+实战篇-15_ 新增文章分类
+
+
+
+实战篇-16_ 文章分类列表
+
+
+
+实战篇-17_ 获取文章分类详情
+
+
+
+实战篇-18_ 更新参数分类
+
+
+
+实战篇-19_ 更新文章分裂和添加文章分类
+
+
+
+实战篇-20_ 新增文章
+
+
+
+实战篇-21_ 新增文章参数校验_自定义校验
+
+
+
+实战篇-22_ 文章分类列表查询（条件分页）
+
+
+
+实战篇-23_ 文件上传_本地存储
+
+
+
+实战篇-24_ 文件上传 阿里云OSS 准备工作
+
+
+
+实战篇-25_ 文件上传 阿里云OSS 入门程序
+
+
+
+实战篇-26_ 文件上传 阿里云OSS 程序集成
+
+
+
+实战篇-27_ 登录优化_redis 思路分析
+
+
+
+实战篇-28_ 
+
+
+
+实战篇-29_ 
+
+
+
+实战篇-30_ 
+
+
+
+实战篇-31_ 
+
+
+
+实战篇-32_ 
+
+
+
+实战篇-33_ 
+
+
+
+实战篇-34_ 
+
+
+
+实战篇-35_ 
+
+
+
+实战篇-36_ 
+
+
+
+实战篇-37_ 
+
+
+
+实战篇-38_ 
+
+
+
+实战篇-39_ 
+
+
+
+实战篇-40_ 
+
+
+
+实战篇-41_ 
+
+
+
+实战篇-42_ 
+
+
+
+实战篇-43_ 
+
+
+
+实战篇-44_ 
+
+
+
+实战篇-45_ 
+
+
+
+实战篇-46_ 
+
+
+
+实战篇-47_
+
+
+
+面试篇-01_ 面试篇导学
+
+
+
+面试篇-02_ 前置知识_ ApplicationContextInitializer
+
+
+
+面试篇-03_ 前置知识_ ApplicationListener
+
+
+
+面试篇-04_ 前置知识_ BeanFactory
+
+
+
+面试篇-05_ 前置知识_ BeanDefinition
+
+
+
+面试篇-06_ 前置知识_ Aware
+
+
+
+面试篇-07_ 前置知识_ InitilizingBean
+
+
+
+面试篇-08_ 
+
