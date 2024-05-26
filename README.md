@@ -154,9 +154,25 @@ UserController -> UserService -> UserMapper -> 操作数据库
 
 ### 基础篇-07_ Bean扫描
 
+Bean扫描
+
+- 标签：<context:component-scan base-package="com.itheima">
+- 注解：@ComponentScan(basePackages = "com.itheima"
+
+Springboot项目启动类上添加了@SpringBootApplication注解，
+
+@SpringBootApplication注解中包含了@ComponentScan。
+
 
 
 ### 基础篇-08_ Bean注册
+
+| 注解        | 说明                 | 位置                                              |
+| ----------- | -------------------- | ------------------------------------------------- |
+| @Component  | 声明Bean的基础注解   | 不属于以下三类，用此注解                          |
+| @Controller | @Component的衍生注解 | 标注在控制器类上                                  |
+| @Service    | @Component的衍生注解 | 标注在业务类上                                    |
+| @Repository | @Component的衍生注解 | 标注在数据访问类上（由于与MyBatis整合，用的少）。 |
 
 
 
